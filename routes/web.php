@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::resource('solutions', 'SolutionController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
