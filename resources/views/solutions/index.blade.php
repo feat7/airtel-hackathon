@@ -2,7 +2,16 @@
 
 @section('title', 'Index')
 
-@section('content')
+@section('container')
 	@parent
-    <p>This is my body content.</p>
+	<center>
+		@foreach ($solutions as $solution)
+			<ul>
+				<li>
+					<a href="{{ url('/solutions/'.$solution->id) }}" > {{ $solution->heading }} </a>
+				</li>
+			</ul>
+		@endforeach
+
+	</center>
 @endsection

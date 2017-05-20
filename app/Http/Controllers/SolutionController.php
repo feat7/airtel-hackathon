@@ -4,9 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Solution;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Auth;
 
 class SolutionController extends Controller
 {
+    
+    public function __construct(){
+        
+        // $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'delete']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +23,8 @@ class SolutionController extends Controller
      */
     public function index()
     {
-        //
+        $data = Solution::all();
+        return view('solutions.index', ['solutions' => $data]);
     }
 
     /**
@@ -24,7 +34,6 @@ class SolutionController extends Controller
      */
     public function create()
     {
-        //
         return view('solutions.create');
     }
 
@@ -44,7 +53,7 @@ class SolutionController extends Controller
         $solution->answer = $request->answer;
 
         if($solution->save()) {
-            var_dump('added!');
+            return redirect('solution.index', ['messege' => 'Added Solution Successfully!!!']);
         }
     }
 
@@ -54,9 +63,10 @@ class SolutionController extends Controller
      * @param  \App\Solution  $solution
      * @return \Illuminate\Http\Response
      */
-    public function show(Solution $solution)
+    public function show($id)
     {
-        //
+        $solution = SOlution::find($id);
+        return view('solutions.show', ['solution' => $solution]);
     }
 
     /**

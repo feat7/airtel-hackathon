@@ -16,6 +16,9 @@ Route::get('/', function () {
 });
 
 Route::resource('solutions', 'SolutionController');
+
+Route::resource('complaints', 'ComplaintController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

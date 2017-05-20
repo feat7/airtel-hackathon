@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Complaint;
+use Auth;
 use Illuminate\Http\Request;
 
 class ComplaintController extends Controller
 {
+    
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,8 @@ class ComplaintController extends Controller
      */
     public function index()
     {
-        //
+        $data = Complaint::all();
+        return view('complaints.index', ['complaints' => $data]);
     }
 
     /**
@@ -24,7 +30,7 @@ class ComplaintController extends Controller
      */
     public function create()
     {
-        //
+        return view('complaints.create');
     }
 
     /**
@@ -35,7 +41,16 @@ class ComplaintController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $complaint = new Complaint;
+
+        $complaint->heading = $request->heading;
+        $complaint->description = $request->description;
+        $complaint->status = 'inprocess';
+        $complaint->user_id = Auth::id();
+
+        if($complaint->save()) {
+            var_dump('added!');
+        }
     }
 
     /**

@@ -1,95 +1,86 @@
-<!doctype html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+@section('container')
+    @parent
+    <h1 class="center-align animated pulse infinite" style="color: #ef5350;"><strong>AIRTEL</strong></h1>
+    <h5 class="center-align">India's first open network</h5>
+    <br><br>
+    <div class="center-align">
+        <a class="waves-effect waves-light btn red  white-text tooltipped" data-position="bottom" data-delay="50" data-tooltip="User Login" href="userlogin.html">
+            <i class="material-icons right">perm_identity</i>
+            <strong>User</strong>
+        </a>
+    </div>
 
-        <title>Laravel</title>
+    <br><br><br>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+    <div class="center-align">
+        <h2 >Have a problem ?</h2>
+        <h5>We have a solution for you</h5>
+        <br>
+        <div class="container">
+            <div class="card hoverable z-depth-5" style="border-color: #ef5350;">
+                <div class="card-content"> 
+                    <span class="card-title">Popular Search</span>
+                    <br><br>
+                    <form action="solution.html">
+                        <div class="container">
+                            <nav style="color: #DB324D;">
+                                <div class="nav-wrapper">
+                                    <div class="input-field ">
+                                        <input id="search" type="search" placeholder="Search your query" required>
+                                        <label class="label-icon" for="search">
+                                            <i class="material-icons whote">search</i>
+                                        </label>
+                                        <i class="material-icons">close</i>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <br><br>
+                    </form>
+                    <ul>
+                        <li>I want to know regarding all plans available</li><br>
+                        <li>I want to change my plan</li> <br> 
+                        <li>I want to know the ARC/airtel store address and contact details.</li><br>
+                        <li>Recharge not reflecting on my account</li><br>
+                        <li>Can I block my SIM if my phone is lost ?</li><br> 
+                    </ul>
+                </div>          
+            </div>
+        </div>  
+    </div>
+    <br><br>
+    <div class="container"><hr></div>     
+    <br><br>
+    <div class="row">
+        <div class="col s6">
+            <div class="card hoverable waves-effect waves-block waves-light">
+                <div class="card-content center-align">
+                    <span class="card-title ">Get USSD codes</span>
+                    <div class="container"><hr></div>
+                    <br>
+                        <p>Full list of USSD codes</p>
+                        <br>
+                        <a class="waves-effect waves-light btn red white-text tooltipped  " data-position="bottom" data-delay="50" data-tooltip="USSD Codes"><i class="material-icons right">code</i>USSD Codes</a>
+                    <br>
+                </div>        
             </div>
         </div>
-    </body>
-</html>
+        <div class="col s6">
+            <div class="card hoverable red  white-text">
+                <div class="card-content center-align">
+                    <span class="card-title bold">
+                        <strong>Recharge</strong>
+                    </span>
+                    <div class="container"><hr></div>
+                    <br>
+                    <p>We've got the best plans for you</p>
+                    <br>
+                    <a class="waves-effect waves-light btn white red-text tooltipped" data-position="bottom" data-delay="50" data-tooltip="Recharge"><i class="material-icons right">label</i>Recharge</a>
+                    <br>
+                </div>        
+            </div>
+        </div>
+    </div> 
+    <br><br>
+@endsection
