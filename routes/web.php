@@ -16,6 +16,12 @@ Route::get('/', function () {
 });
 
 Route::resource('solutions', 'SolutionController');
+Route::resource('ai', 'ChatQuestionController');
+
+Route::get('/api/question/{question}', 'ChatQuestionController@getQuestionById');
+// Route::get('/api/question/{answer}', 'ChatQuestionController@getQuestionByAnswerId');
+Route::get('/api/answers/{question}', 'ChatAnswerController@getAnswersByQuestionId');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
