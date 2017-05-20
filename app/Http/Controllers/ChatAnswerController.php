@@ -82,4 +82,12 @@ class ChatAnswerController extends Controller
     {
         //
     }
+
+
+    //API ZONE
+
+    public function getAnswersByQuestionId(\App\ChatQuestion $question)
+    {
+        return $question->answers;
+    }
 }

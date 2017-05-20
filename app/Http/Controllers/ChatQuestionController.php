@@ -14,7 +14,7 @@ class ChatQuestionController extends Controller
      */
     public function index()
     {
-        //
+        return view('chat.index');
     }
 
     /**
@@ -81,5 +81,20 @@ class ChatQuestionController extends Controller
     public function destroy(ChatQuestion $chatQuestion)
     {
         //
+    }
+
+
+
+    //API ZONE
+
+    public function getQuestionByAnswerId(\App\ChatAnswer $answer)
+    {
+        return $answer->question;
+    }
+
+
+    public function getQuestionById(\App\ChatQuestion $question)
+    {
+        return $question;
     }
 }
