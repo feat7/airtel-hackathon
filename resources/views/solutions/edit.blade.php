@@ -2,7 +2,7 @@
 
 @section('title', 'Edit')
 
-@section('content')
+@section('container')
 	@parent
     <p>Edit</p>
 @endsection

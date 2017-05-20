@@ -2,7 +2,7 @@
 
 @section('title', 'Create')
 
-@section('content')
+@section('container')
 	@parent
 <div class="container">
     <div class="row">
