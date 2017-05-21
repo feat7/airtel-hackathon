@@ -6,7 +6,7 @@
 	@parent
 	<body style="font-family: 'Raleway', sans-serif;" class="animated fadeInUp">
       <!--Import jQuery before materialize.js-->
-      <h2 class="center-align ">Need Help ?</h2>
+      <h2 class="center-align ">Need Help <i class="material-icons md-48">&#xE0C6;</i></h2>
       <br>
       <div class="container">
       <nav style="color: #DB324D;">
@@ -31,6 +31,7 @@
               			<div class="card-content center">
                 			<span class="card-title">
                 				<a href="{{ url('/solutions/'.$solution->id) }}">
+                					<i class="material-icons">&#xE157;</i> 
                 					{{ $solution->heading }}
                 				</a>
                 			</span> 

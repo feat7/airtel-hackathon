@@ -1,17 +1,50 @@
 @extends('layouts.app')
+
+@section('title', 'Welcome')
+
 @section('container')
     @parent
+    <style type="text/css">
+    .airtel-hackathon{
+        background-image: url("{{ asset('/img/hackathon.png') }}");
+    }
+    <script>
+    function showResult(str) {
+    if (str.length==0) { 
+        document.getElementById("livesearch").innerHTML="";
+        document.getElementById("livesearch").style.border="0px";
+        return;
+    }
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    } else {  // code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function() {
+        if (this.readyState==4 && this.status==200) {
+        document.getElementById("livesearch").innerHTML=this.responseText;
+        document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+        }
+    }
+    xmlhttp.open("GET","livesearch.php?q="+str,true);
+    xmlhttp.send();
+    }
+    </script>
+    </style>
     <center>
-        <img src="{{ asset('img/logo.svg') }}">
+        <div class="airtel-hackathon">
+            <img src="{{ asset('img/logo.svg') }}">
+            <h5 class="center-align">India's first open network</h5>
+            <br><br>
+            <div class="center-align">
+                <a class="waves-effect waves-light btn red  white-text tooltipped" data-position="bottom" data-delay="50" data-tooltip="User Login" href="userlogin.html">
+                    <i class="material-icons right">perm_identity</i>
+                    <strong>User</strong>
+                </a>
+            </div>
+        </div>
     </center>
-    <h5 class="center-align">India's first open network</h5>
-    <br><br>
-    <div class="center-align">
-        <a class="waves-effect waves-light btn red  white-text tooltipped" data-position="bottom" data-delay="50" data-tooltip="User Login" href="userlogin.html">
-            <i class="material-icons right">perm_identity</i>
-            <strong>User</strong>
-        </a>
-    </div>
 
     <br><br><br>
 
@@ -24,29 +57,23 @@
                 <div class="card-content"> 
                     <span class="card-title">Popular Search</span>
                     <br><br>
-                    <form action="solution.html">
-                        <div class="container">
-                            <nav style="color: #DB324D;">
-                                <div class="nav-wrapper">
-                                    <div class="input-field ">
-                                        <input id="search" type="search" placeholder="Search your query" required>
-                                        <label class="label-icon" for="search">
-                                            <i class="material-icons whote">search</i>
-                                        </label>
-                                        <i class="material-icons">close</i>
-                                    </div>
+                    <div class="container">
+                        <nav style="color: #DB324D;">
+                            <div class="nav-wrapper">
+                                <div class="input-field ">
+                                    <input id="search" type="search" placeholder="Search your query" required>
+                                    <label class="label-icon" for="search">
+                                        <i class="material-icons whote">search</i>
+                                    </label>
+                                    <i class="material-icons">close</i>
                                 </div>
-                            </nav>
-                        </div>
-                        <br><br>
-                    </form>
-                    <ul>
-                        <li>I want to know regarding all plans available</li><br>
-                        <li>I want to change my plan</li> <br> 
-                        <li>I want to know the ARC/airtel store address and contact details.</li><br>
-                        <li>Recharge not reflecting on my account</li><br>
-                        <li>Can I block my SIM if my phone is lost ?</li><br> 
-                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="livesearch">
+                        
+                    </div>
+                    <br><br>
                 </div>          
             </div>
         </div>  

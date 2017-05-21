@@ -33,7 +33,7 @@
 <div class="panel container">
 	<div class="start">
 		<div class="question">
-			<h3>How may I help you?</h3>
+			<h3><i class="material-icons md-36">&#xE8AF;</i>How may I help you?</h3>
 		</div>
 
 			<button class="answer" data-val="1">I need to register a complaint.</button>

@@ -1,5 +1,12 @@
 <html>
     <head>
+
+    <style type="text/css">
+      .material-icons.md-18 { font-size: 18px; }
+      .material-icons.md-24 { font-size: 24px; }
+      .material-icons.md-36 { font-size: 36px; }
+      .material-icons.md-48 { font-size: 48px; }
+    </style>
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -12,13 +19,15 @@
 
       <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
 
-      
+      <title>
+          @yield('title')
+      </title>
+
     </head>
     
     <body style="font-family: 'Raleway', sans-serif;">
     <!--Import jQuery before materialize.js-->
     @include('layouts.header')
-    <br><br>
         
         @section('container')
         @show

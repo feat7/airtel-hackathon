@@ -10,8 +10,8 @@
                 <ul>
                 	<li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
                 	<li><a class="grey-text text-lighten-3" href="#!">FAQ</a></li>
-                	<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                	<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                	<li><a class="grey-text text-lighten-3" href="#!">myAirtel App</a></li>
+                	<li><a class="grey-text text-lighten-3" href="#!">Press Release</a></li>
                 </ul>
             </div>
         </div>
