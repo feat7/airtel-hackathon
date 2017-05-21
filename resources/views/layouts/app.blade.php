@@ -10,6 +10,8 @@
 
       <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
+      <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+
       
     </head>
     
@@ -22,5 +24,6 @@
         @show
             
         @include('layouts.footer')
+        <script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
     </body>
 </html>

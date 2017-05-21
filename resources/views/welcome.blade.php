@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('container')
     @parent
-    <h1 class="center-align animated pulse infinite" style="color: #ef5350;"><strong>AIRTEL</strong></h1>
+    <center>
+        <img src="{{ asset('img/logo.svg') }}">
+    </center>
     <h5 class="center-align">India's first open network</h5>
     <br><br>
     <div class="center-align">

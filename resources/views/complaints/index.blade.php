@@ -2,7 +2,7 @@
 
 @section('title', 'Complaints')
 
-@section('content')
+@section('container')
 	@parent
 	<center>
 		@foreach ($complaints as $complain)

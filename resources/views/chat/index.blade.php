@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 
-@section('content')
+@section('container')
 
 <style type="text/css">
 	.answer {
